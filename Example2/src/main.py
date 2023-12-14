@@ -9,7 +9,7 @@ epoch_num = 4000  # 总训练轮数
 
 dataset = Dataset(root='../dataset/train/', batch_size=batch_size, shuffle=True)  # 读取数据集
 linear = nn.Linear(4, 2)  # 实例化线性层
-criterion = nn.MESLoss()  # 实例化损失函数
+criterion = nn.MSELoss()  # 实例化损失函数
 optimizer = nn.SGD(linear.params(), lr=learning_rate)  # 实例化均方差损失函数
 
 for epoch in range(epoch_num):

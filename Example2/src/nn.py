@@ -41,6 +41,6 @@ class SGD:
 
 
 # 自定义均方差损失函数，用来计算损失，注意这里需要求和，因为只有0维的张量才能调用backward()函数
-class MESLoss:
+class MSELoss:
     def __call__(self, pred, label):
         return 1 / 2 / len(label) * ((pred - label) ** 2).sum()
