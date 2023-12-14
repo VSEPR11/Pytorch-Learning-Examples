@@ -43,8 +43,10 @@ with torch.no_grad():
     det = (total_count - det) / total_count
     print(f"准确率:{det * 100}%")
 
-    # 我们尝试调用以下模型来预测，比如输入一个label为0的数据，看看输出是不是0
+    # 我们尝试调用以下模型来预测，比如输入一个label为0的数据，看看输出是不是0,再用softmax函数查看其概率
     test_tensor = torch.tensor([250., 0.7, 0.8, 11.])
     output = linear(test_tensor)
-    value, index = torch.max(test_tensor, dim=0, keepdim=True)
-    print(f"输入的是label为0的数据，输出的label是{index.item()}")
+    output = nn.Functional.softmax(output)
+    output = torch.flatten(output)
+    value, index = torch.max(output, dim=0, keepdim=True)
+    print(f"输入的是label为0的数据，输出的label是{index.item()}， 概率是{value.item() * 100}%")
