@@ -18,8 +18,8 @@ for epoch in range(epoch_num):
         x, y = input()  # 从数据集中获取数据
         output = linear(x)  # 前向传播
         optimizer.zero_grad()  # 清空梯度
-        loss = criterion(output, y)  # 计算均方差损失
-        loss.backward()  # 反响传播
+        loss = criterion(output, y)  # 计算交叉熵损失
+        loss.backward()  # 反向传播
         optimizer.step()  # 执行优化
         run_loss += loss.sum().item()  # 计算每轮总损失
     run_loss /= len(dataset)

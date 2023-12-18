@@ -7,8 +7,8 @@ import torch
 # params 返回参数列表
 class Linear:
     def __init__(self, input_dim, output_dim):
-        self.w = torch.ones(size=(input_dim, output_dim), requires_grad=True)
-        self.b = torch.ones(size=(1, output_dim), requires_grad=True)
+        self.w = torch.randn(size=(input_dim, output_dim), requires_grad=True)
+        self.b = torch.randn(size=(1, output_dim), requires_grad=True)
 
     def __call__(self, x):
         return self.forward(x)
