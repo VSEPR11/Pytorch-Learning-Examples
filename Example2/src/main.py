@@ -10,7 +10,7 @@ epoch_num = 4000  # 总训练轮数
 dataset = Dataset(root='../dataset/train/', batch_size=batch_size, shuffle=True)  # 读取数据集
 linear = nn.Linear(4, 2)  # 实例化线性层
 criterion = nn.MSELoss()  # 实例化损失函数
-optimizer = nn.SGD(linear.params(), lr=learning_rate)  # 实例化均方差损失函数
+optimizer = nn.SGD(linear.params(), lr=learning_rate)  # 实例化小批量随机梯度下降优化器
 
 for epoch in range(epoch_num):
     run_loss = 0  # 每轮总损失
