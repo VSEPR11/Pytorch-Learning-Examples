@@ -8,7 +8,7 @@ Example5
 
   我们构建了如下图所示的LeNet，并使用之前的实现的接口进行训练。
 
-  ![avatar](/home/v/Downloads/QQ20231220-230204.png)
+  ![avatar](./Net.png)
   
   为了让读者更加熟悉深度神经网络的训练流程，本例特别将pytorch中的常用接口按照
   自己的方式实现并使用。但请注意，这并非pytorch的源码，甚至和源码有很大的出入，
