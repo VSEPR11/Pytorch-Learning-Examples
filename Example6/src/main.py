@@ -13,7 +13,7 @@ learning_rate = 0.001  # 学习率
 epoch_num = 50  # 训练总轮数
 
 # 导入数据集
-transforms = transforms.Compose([transforms.ToTensor(), transforms.Normalize(0.1, 0.5)])  # 定义组合变换
+transforms = transforms.Compose([transforms.ToTensor(), transforms.Normalize(0.1317, 0.3094)])  # 定义组合变换
 MNIST_train = datasets.MNIST('../dataset', train=True, transform=transforms, download=True)  # 训练集
 MNIST_test = datasets.MNIST('../dataset', train=True, transform=transforms, download=True)  # 测试集
 train_set = DataLoader(MNIST_train, batch_size=batch_size, shuffle=True)
