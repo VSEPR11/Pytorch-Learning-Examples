@@ -49,7 +49,7 @@ batch_size = 64  # 批量大小
 learning_rate = 1e-4  # 学习率
 epoch_num = 60  # 总训练轮数
 
-transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize(0, 1)])
+transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize(0.1317, 0.3094)])
 MINIST_train = datasets.MNIST(root='../dataset', train=True, transform=transform, download=True)
 MINIST_test = datasets.MNIST(root='../dataset', train=False, transform=transform, download=True)
 dataset = data.DataLoader(MINIST_train, batch_size=batch_size, shuffle=True)
